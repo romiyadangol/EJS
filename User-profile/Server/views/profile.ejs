@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+
+    <p>Name : <%= name %></p>
+    <p>Age : <%= age %></p>
+    <% if (isAdmin) { %>
+        <p>You have admin privileges.</p>
+    <% } %>
+
+    <% if(hobbies) {%>
+        <p>Hobbies :</p>
+        <ul>
+            <% hobbies.map(hobby => { %>
+            <li><%= hobby %></li>
+            <% }) %>
+        </ul>
+    <%} else { %>
+            <p>No hobbies</p>
+    <% } %>
+
+    <%if(age > 18){%>
+        <p>You are eligible for adult secrviecs.</p>
+    <%}%>
+   
+    <!-- <form action="">
+        <input type="text" name="name" placeholder="Name" value="<%= name %>">
+        <input type="text" name="age" placeholder="Age">
+        <input type="checkbox" name="isAdmin">
+        <input type="text" name="hobbies" >
+        <button type="submit">Submit</button>
+    </form> -->
+</body>
+</html>
